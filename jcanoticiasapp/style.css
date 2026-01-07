@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+  color: #fff;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, #000, #1a1a1a, #000);
+  animation: bgmove 8s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes bgmove {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(60deg); }
+}
+
+.player {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cover {
+  width: 200px;
+  border-radius: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.status {
+  color: #ff0000;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: none;
+  background: #ff0000;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+.social {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+}
+
+.social a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 21px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.social a:hover {
+  transform: translateY(-3px) scale(1.08);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 14px rgba(255,255,255,0.25);
+}
+
+
+
+.footer {
+  margin-top: 25px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.35);
+}
+
+.volume {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volume input {
+  width: 140px;
+}
+
+.volume button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.bg-slideshow {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: fadebg 1.5s ease;
+  z-index: -2;
+}
+
+@keyframes fadebg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: -1;
+}
+

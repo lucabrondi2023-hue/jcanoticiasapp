@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio en Vivo</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="logo.png">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- 🎥 VIDEO DE FONDO (opcional) -->
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="fondo.mp4" type="video/mp4">
+</video>
+
+<!-- 🖼️ FONDOS DE IMAGEN (rotativos) -->
+<div class="bg-slideshow"></div>
+<div class="overlay"></div>
+
+<main class="player">
+  <img src="logo.png" class="cover">
+
+  <h1>JCA NOTICIAS</h1>
+  <p class="status">EN VIVO</p>
+
+  <!-- 🎵 STREAM -->
+  <audio id="radio" src="https://uk14freenew.listen2myradio.com/live.mp3?typeportmount=s1_28160_stream_964937504"></audio>
+
+  <!-- ▶ PLAY / PAUSE -->
+  <div class="controls">
+    <button onclick="togglePlay()" id="playBtn">
+      <i class="fas fa-play"></i>
+    </button>
+  </div>
+
+  <!-- 🔊 VOLUMEN + MUTE -->
+  <div class="volume">
+    <button id="muteBtn" onclick="toggleMute()">
+      <i class="fas fa-volume-up"></i>
+    </button>
+
+    <input type="range" id="volumeControl" min="0" max="100" value="80">
+  </div>
+
+  <!-- 🌐 REDES + INSTALAR -->
+  <div class="social">
+    <a href="https://www.facebook.com/jcanoticias"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.instagram.com/jcanoticias/"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=5492901600875"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://jcanoticias.com.ar/"><i class="fa-solid fa-globe"></i></a>
+    <a href="https://www.youtube.com/@jcanoticias9506"><i class="fa-brands fa-youtube"></i></a>
+    <!--<a href="#"><i class="fa-brands fa-x-twitter"></i></a>-->
+    <a href="#" id="installBtn"><i class="fas fa-download"></i></a>
+  </div>
+
+  <p class="footer">Desarollado por Radio + 104.9</p>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
